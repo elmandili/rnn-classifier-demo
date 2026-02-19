@@ -35,8 +35,8 @@ The model includes:
 .
 ├── train.ipynb        # Main notebook (training pipeline)
 ├── README.md          # Project documentation
-├── model.keras        # Saved trained model (after training)
-├── tokenizer.pkl      # Saved tokenizer (optional)
+├── models             # Saved trained model (after training)
+├── results
 ```
 
 ---
@@ -85,23 +85,14 @@ jupyter notebook train.ipynb
 After training:
 
 ```python
-model.save("model.keras")
+model.save("./models/model.keras")
 ```
 
 To load later:
 
 ```python
 from tensorflow.keras.models import load_model
-model = load_model("model.keras")
-```
-
-If using a tokenizer:
-
-```python
-import pickle
-
-with open("tokenizer.pkl", "wb") as f:
-    pickle.dump(tokenizer, f)
+model = load_model("./models/model.keras")
 ```
 
 ---
